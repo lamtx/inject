@@ -20,6 +20,18 @@ class Module {
   const Module._();
 }
 
+@Target({TargetKind.parameter})
+class Param {
+  const Param._();
+}
+
+@Target({TargetKind.classType})
+class Binds {
+  const Binds(this.superType);
+
+  final Type superType;
+}
+
 const inject = Inject._();
 
 const provides = Provides._();
@@ -28,9 +40,4 @@ const singleton = Singleton._();
 
 const module = Module._();
 
-@Target({TargetKind.classType})
-class Binds {
-  const Binds(this.superType);
-
-  final Type superType;
-}
+const param = Param._();
